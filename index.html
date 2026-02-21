@@ -3,62 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hyundai Motors | Modelos 2026</title>
+    <title>Brenda Gimenez | Automotor Hyundai 2026</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f4f4f4; }
-        header { background-color: #002c5f; color: white; padding: 20px; text-align: center; }
-        nav { background: #fff; padding: 10px; text-align: center; border-bottom: 2px solid #002c5f; }
-        .container { max-width: 1000px; margin: 20px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 10px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #002c5f; color: white; padding: 30px; text-align: center; border-bottom: 5px solid #00aad2; }
+        nav { background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid #002c5f; sticky; top: 0; z-index: 100; }
+        nav a { text-decoration: none; color: #002c5f; font-weight: bold; margin: 0 15px; }
+        
+        .container { max-width: 1100px; margin: 20px auto; padding: 10px; }
+        
+        /* Grid de Modelos */
+        .grid-modelos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; }
-        .card:hover { transform: scale(1.02); }
-        .card img { width: 100%; height: 200px; object-fit: cover; background-color: #ddd; }
+        .card:hover { transform: translateY(-5px); }
+        .card img { width: 100%; height: 220px; object-fit: cover; }
         .info { padding: 15px; }
-        .btn { display: inline-block; background: #002c5f; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
-        footer { text-align: center; padding: 20px; background: #333; color: white; margin-top: 20px; }
+        
+        /* Sección Destacada HB20S */
+        .featured-model { background: white; margin-top: 40px; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: flex; flex-wrap: wrap; gap: 30px; }
+        .featured-info { flex: 1; min-width: 300px; }
+        .specs-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.9em; }
+        .specs-table td { padding: 8px; border-bottom: 1px solid #eee; }
+        .specs-table td:first-child { font-weight: bold; color: #002c5f; }
+
+        .btn { display: inline-block; background: #002c5f; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; }
+        .btn:hover { background: #00aad2; }
+        .tag { background: #00aad2; color: white; padding: 3px 8px; border-radius: 3px; font-size: 0.8em; text-transform: uppercase; }
+
+        footer { text-align: center; padding: 30px; background: #002c5f; color: white; margin-top: 40px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>BRENDA GIMENEZ AUTOMOTOR</h1>
-    <p>New Thinking. New Possibilities.</p>
+    <h1>BRENDA GIMENEZ</h1>
+    <p style="letter-spacing: 2px;">ASESORA DE VENTAS AUTOMOTOR S.A.</p>
 </header>
 
 <nav>
-    <a href="#">Modelos</a> | <a href="#">Híbridos y Eléctricos</a> | <a href="#">SUV</a>
+    <a href="#modelos">Modelos</a> | 
+    <a href="#hb20s">HB20S Especial</a> | 
+    <a href="https://wa.me/tu-numero-aqui" target="_blank" style="color: #25d366;">Contactar por WhatsApp</a>
 </nav>
 
-<div class="container">
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&q=80&w=400" alt="Hyundai IONIQ 5">
-        <div class="info">
-            <h3>IONIQ 5</h3>
-            <p>El futuro eléctrico con diseño retro-futurista y carga ultra rápida.</p>
-            <a href="#" class="btn">Ver detalles</a>
+<div class="container" id="modelos">
+    <h2 style="text-align: center; color: #002c5f;">Modelos Destacados 2026</h2>
+    <div class="grid-modelos">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&q=80&w=400" alt="IONIQ 5">
+            <div class="info">
+                <h3>IONIQ 5 <span class="tag">Eléctrico</span></h3>
+                <p>El futuro eléctrico con diseño retro-futurista y carga ultra rápida.</p>
+                <a href="#" class="btn">Cotizar Ahora</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1630044332306-0370d9082087?auto=format&fit=crop&q=80&w=400" alt="Tucson">
+            <div class="info">
+                <h3>Tucson 2026</h3>
+                <p>Tecnología avanzada y un diseño que no pasa desapercibido.</p>
+                <a href="#" class="btn">Solicitar Test Drive</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&q=80&w=400" alt="Elantra N">
+            <div class="info">
+                <h3>Elantra N</h3>
+                <p>Para los que buscan adrenalina y un rendimiento deportivo real.</p>
+                <a href="#" class="btn">Ver Detalles</a>
+            </div>
         </div>
     </div>
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1630044332306-0370d9082087?auto=format&fit=crop&q=80&w=400" alt="Hyundai Tucson">
-        <div class="info">
-            <h3>Tucson 2026</h3>
-            <p>Tecnología avanzada y un diseño que no pasa desapercibido en la ciudad.</p>
-            <a href="#" class="btn">Ver detalles</a>
+    <h2 id="hb20s" style="margin-top: 50px; color: #002c5f;">Nuevo HB20S - Ficha Técnica</h2>
+    <div class="featured-model">
+        <div style="flex: 1; min-width: 300px;">
+            <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&q=80&w=600" alt="Hyundai HB20S" style="width: 100%; border-radius: 8px;">
+            <div style="margin-top: 15px; padding: 15px; border: 1px dashed #002c5f; border-radius: 5px;">
+                <h4 style="margin: 0;">Equipamiento Premium Incluido:</h4>
+                <ul style="font-size: 0.9em; padding-left: 20px;">
+                    <li>6 Airbags de serie</li>
+                    <li>Apple Car Play y Android Auto inalámbrico</li>
+                    <li>Cámara y sensor de retroceso</li>
+                    <li>Pantalla multimedia de 8"</li>
+                </ul>
+            </div>
         </div>
-    </div>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&q=80&w=400" alt="Hyundai Elantra">
-        <div class="info">
-            <h3>Elantra N</h3>
-            <p>Para los que buscan adrenalina y un rendimiento deportivo real.</p>
-            <a href="#" class="btn">Ver detalles</a>
+        
+        <div class="featured-info">
+            <span class="tag" style="background: #e63946;">Más Vendido</span>
+            <h3>HB20S Sedan 1.6 MPI</h3>
+            <p><strong>Representa y Distribuye:</strong> Automotor S.A.</p>
+            
+            <table class="specs-table">
+                <tr><td>Motor</td><td>Gamma 1.6 MPI (Gasolina)</td></tr>
+                <tr><td>Potencia</td><td>123 cv a 6300 RPM</td></tr>
+                <tr><td>Transmisión</td><td>Mecánica o Automática (6 vel.)</td></tr>
+                <tr><td>Maletero</td><td>475 Litros (Capacidad líder)</td></tr>
+                <tr><td>Seguridad</td><td>Frenos ABS + ESP + ISOFIX</td></tr>
+                <tr><td>Llantas</td><td>Aleación 15" Corte Diamante (AT)</td></tr>
+            </table>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="#" class="btn" style="background: #25d366; width: 80%;">Consultar Financiación Plan Familiar</a>
+            </div>
         </div>
     </div>
 </div>
 
 <footer>
-    <p>&copy; 2026 Fan Page Hyundai - Hecho en HTML Puro</p>
+    <p><strong>Brenda Gimenez - Asesora Oficial Hyundai</strong></p>
+    <p>Automotor S.A. | Paraguay 2026</p>
+    <p style="font-size: 0.8em; opacity: 0.7;">&copy; Imágenes con fines ilustrativos. Los precios y versiones pueden variar.</p>
 </footer>
 
 </body>
