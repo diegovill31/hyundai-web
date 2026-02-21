@@ -3,120 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brenda Gimenez | Automotor Hyundai 2026</title>
+    <title>Brenda Gimenez | Automotor Paseo La Galería</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f4f4f4; color: #333; }
-        header { background-color: #002c5f; color: white; padding: 30px; text-align: center; border-bottom: 5px solid #00aad2; }
-        nav { background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid #002c5f; sticky; top: 0; z-index: 100; }
-        nav a { text-decoration: none; color: #002c5f; font-weight: bold; margin: 0 15px; }
+        :root {
+            --hyundai-blue: #002c5f;
+            --premium-gold: #c5a059; /* Para Maserati/Lynk & Co */
+            --dark-bg: #1a1a1a;
+            --text-gray: #444;
+        }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, sans-serif; margin: 0; background-color: #f8f9fa; color: var(--text-gray); }
         
-        .container { max-width: 1100px; margin: 20px auto; padding: 10px; }
-        
-        /* Grid de Modelos */
-        .grid-modelos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .card img { width: 100%; height: 220px; object-fit: cover; }
-        .info { padding: 15px; }
-        
-        /* Sección Destacada HB20S */
-        .featured-model { background: white; margin-top: 40px; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: flex; flex-wrap: wrap; gap: 30px; }
-        .featured-info { flex: 1; min-width: 300px; }
-        .specs-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.9em; }
-        .specs-table td { padding: 8px; border-bottom: 1px solid #eee; }
-        .specs-table td:first-child { font-weight: bold; color: #002c5f; }
+        /* Header Multi-marca */
+        header { background-color: var(--hyundai-blue); color: white; padding: 40px 20px; text-align: center; }
+        header h1 { margin: 0; font-size: 2.2em; letter-spacing: 1px; }
+        header p { margin: 5px 0 0; opacity: 0.9; font-weight: 300; }
+        .location-tag { background: #e63946; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8em; display: inline-block; margin-top: 10px; }
 
-        .btn { display: inline-block; background: #002c5f; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; }
-        .btn:hover { background: #00aad2; }
-        .tag { background: #00aad2; color: white; padding: 3px 8px; border-radius: 3px; font-size: 0.8em; text-transform: uppercase; }
+        nav { background: white; padding: 15px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        nav a { text-decoration: none; color: var(--hyundai-blue); font-weight: 600; margin: 0 12px; font-size: 0.9em; text-transform: uppercase; }
 
-        footer { text-align: center; padding: 30px; background: #002c5f; color: white; margin-top: 40px; }
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+
+        /* Sección de Marcas */
+        .brand-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .brand-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .brand-card img { width: 100%; height: 200px; object-fit: cover; }
+        .brand-content { padding: 20px; }
+        .brand-name { font-size: 1.4em; color: var(--hyundai-blue); margin: 0 0 10px 0; display: flex; justify-content: space-between; align-items: center; }
+        
+        /* Estilos específicos por categoría */
+        .luxury { border-top: 4px solid var(--premium-gold); }
+        .work { border-top: 4px solid #cc0000; } /* Isuzu */
+
+        .btn { display: block; text-align: center; background: var(--hyundai-blue); color: white; padding: 12px; text-decoration: none; border-radius: 6px; font-weight: bold; transition: 0.3s; margin-top: 15px; }
+        .btn:hover { filter: brightness(1.2); }
+        .btn-wa { background: #25d366; }
+
+        footer { background: var(--dark-bg); color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
+        .brand-list { opacity: 0.7; font-size: 0.8em; margin-bottom: 20px; word-spacing: 15px; }
     </style>
 </head>
 <body>
 
 <header>
+    <p>ASESORA COMERCIAL</p>
     <h1>BRENDA GIMENEZ</h1>
-    <p style="letter-spacing: 2px;">ASESORA DE VENTAS AUTOMOTOR S.A.</p>
+    <div class="location-tag">📍 Suc. Paseo la Galería</div>
 </header>
 
 <nav>
-    <a href="#modelos">Modelos</a> | 
-    <a href="#hb20s">HB20S Especial</a> | 
-    <a href="https://wa.me/tu-numero-aqui" target="_blank" style="color: #25d366;">Contactar por WhatsApp</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#marcas">Nuestras Marcas</a>
+    <a href="https://wa.me/tu-numero" class="contact-link" style="color:#25d366">Agendar Cita</a>
 </nav>
 
-<div class="container" id="modelos">
-    <h2 style="text-align: center; color: #002c5f;">Modelos Destacados 2026</h2>
-    <div class="grid-modelos">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&q=80&w=400" alt="IONIQ 5">
-            <div class="info">
-                <h3>IONIQ 5 <span class="tag">Eléctrico</span></h3>
-                <p>El futuro eléctrico con diseño retro-futurista y carga ultra rápida.</p>
-                <a href="#" class="btn">Cotizar Ahora</a>
+<div class="container">
+    <h2 style="text-align: center; margin-bottom: 40px; font-weight: 300;">Portafolio Multimarca <strong>Automotor</strong></h2>
+
+    <div class="brand-grid" id="catalogo">
+        <div class="brand-card luxury">
+            <img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&q=80&w=500" alt="Maserati">
+            <div class="brand-content">
+                <div class="brand-name">MASERATI <span style="font-size: 0.6em; color: var(--premium-gold);">LUXURY</span></div>
+                <p>Exclusividad italiana y deportividad pura. Modelos Grecale y Levante disponibles para entrega inmediata.</p>
+                <a href="#" class="btn">Solicitar Dossier</a>
             </div>
         </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1630044332306-0370d9082087?auto=format&fit=crop&q=80&w=400" alt="Tucson">
-            <div class="info">
-                <h3>Tucson 2026</h3>
-                <p>Tecnología avanzada y un diseño que no pasa desapercibido.</p>
-                <a href="#" class="btn">Solicitar Test Drive</a>
+        <div class="brand-card">
+            <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&q=80&w=500" alt="Hyundai">
+            <div class="brand-content">
+                <div class="brand-name">HYUNDAI <span>2026</span></div>
+                <p>Líder en tecnología y garantía. Desde el HB20 hasta la Tucson y la línea eléctrica IONIQ.</p>
+                <a href="#" class="btn">Ver Modelos</a>
             </div>
         </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&q=80&w=400" alt="Elantra N">
-            <div class="info">
-                <h3>Elantra N</h3>
-                <p>Para los que buscan adrenalina y un rendimiento deportivo real.</p>
-                <a href="#" class="btn">Ver Detalles</a>
+        <div class="brand-card work">
+            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=500" alt="Isuzu">
+            <div class="brand-content">
+                <div class="brand-name">ISUZU <span>PICK-UPS</span></div>
+                <p>La fuerza del trabajo. D-MAX con la mayor durabilidad del mercado para el campo y la ciudad.</p>
+                <a href="#" class="btn">Cotizar Flota</a>
             </div>
         </div>
-    </div>
 
-    <h2 id="hb20s" style="margin-top: 50px; color: #002c5f;">Nuevo HB20S - Ficha Técnica</h2>
-    <div class="featured-model">
-        <div style="flex: 1; min-width: 300px;">
-            <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&q=80&w=600" alt="Hyundai HB20S" style="width: 100%; border-radius: 8px;">
-            <div style="margin-top: 15px; padding: 15px; border: 1px dashed #002c5f; border-radius: 5px;">
-                <h4 style="margin: 0;">Equipamiento Premium Incluido:</h4>
-                <ul style="font-size: 0.9em; padding-left: 20px;">
-                    <li>6 Airbags de serie</li>
-                    <li>Apple Car Play y Android Auto inalámbrico</li>
-                    <li>Cámara y sensor de retroceso</li>
-                    <li>Pantalla multimedia de 8"</li>
-                </ul>
+        <div class="brand-card luxury">
+            <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&q=80&w=500" alt="Lynk & Co">
+            <div class="brand-content">
+                <div class="brand-name">LYNK & CO <span>PREMIUM</span></div>
+                <p>Movilidad conectada y diseño europeo. La nueva forma de entender el lujo automotriz.</p>
+                <a href="#" class="btn">Descubrir Lynk & Co</a>
             </div>
         </div>
-        
-        <div class="featured-info">
-            <span class="tag" style="background: #e63946;">Más Vendido</span>
-            <h3>HB20S Sedan 1.6 MPI</h3>
-            <p><strong>Representa y Distribuye:</strong> Automotor S.A.</p>
-            
-            <table class="specs-table">
-                <tr><td>Motor</td><td>Gamma 1.6 MPI (Gasolina)</td></tr>
-                <tr><td>Potencia</td><td>123 cv a 6300 RPM</td></tr>
-                <tr><td>Transmisión</td><td>Mecánica o Automática (6 vel.)</td></tr>
-                <tr><td>Maletero</td><td>475 Litros (Capacidad líder)</td></tr>
-                <tr><td>Seguridad</td><td>Frenos ABS + ESP + ISOFIX</td></tr>
-                <tr><td>Llantas</td><td>Aleación 15" Corte Diamante (AT)</td></tr>
-            </table>
-            
-            <div style="text-align: center; margin-top: 20px;">
-                <a href="#" class="btn" style="background: #25d366; width: 80%;">Consultar Financiación Plan Familiar</a>
+
+        <div class="brand-card">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=500" alt="Geely">
+            <div class="brand-content">
+                <div class="brand-name">GEELY <span>SUV</span></div>
+                <p>Innovación que sorprende. La gama GX3 Pro y Azkarra con terminaciones de primer nivel.</p>
+                <a href="#" class="btn">Test Drive</a>
+            </div>
+        </div>
+
+        <div class="brand-card">
+            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=500" alt="KGM SsangYong">
+            <div class="brand-content">
+                <div class="brand-name">KGM <span>(SsangYong)</span></div>
+                <p>Herencia coreana en SUVs robustas. Torres y Rexton: potencia y espacio sin límites.</p>
+                <a href="#" class="btn">Más Info</a>
             </div>
         </div>
     </div>
 </div>
 
 <footer>
-    <p><strong>Brenda Gimenez - Asesora Oficial Hyundai</strong></p>
-    <p>Automotor S.A. | Paraguay 2026</p>
-    <p style="font-size: 0.8em; opacity: 0.7;">&copy; Imágenes con fines ilustrativos. Los precios y versiones pueden variar.</p>
+    <div class="brand-list">
+        HYUNDAI • ISUZU • GEELY • KGM • MASERATI • LYNK&CO
+    </div>
+    <p><strong>Brenda Gimenez</strong><br>Showroom Paseo La Galería, Nivel 1</p>
+    <p>Automotor S.A. | Representante Exclusivo en Paraguay</p>
+    <a href="https://wa.me/tu-numero" class="btn btn-wa" style="display: inline-block; width: auto; padding: 10px 30px;">Escribime al WhatsApp</a>
 </footer>
 
 </body>
