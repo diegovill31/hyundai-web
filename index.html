@@ -14,6 +14,7 @@
 
         body { font-family: 'Inter', sans-serif; margin: 0; background: #fff; color: var(--dark-blue); scroll-behavior: smooth; overflow-x: hidden; }
 
+        /* HEADER AZUL PREMIUM */
         header {
             position: fixed; top: 0; width: 100%; height: 75px;
             background: var(--geely-blue);
@@ -25,14 +26,13 @@
         }
         .brand-name { color: white; font-weight: 700; letter-spacing: 1px; border-left: 1px solid rgba(255,255,255,0.3); padding-left: 15px; }
 
-        .brand-carousel {
-            background: #fff; padding: 15px 0; margin-top: 75px; 
-            overflow: hidden; border-bottom: 1px solid #eee;
-        }
+        /* CAROUSEL DE MARCAS */
+        .brand-carousel { background: #fff; padding: 15px 0; margin-top: 75px; overflow: hidden; border-bottom: 1px solid #eee; }
         .brand-track { display: flex; width: calc(200px * 12); animation: scroll 25s linear infinite; }
         .brand-logo { width: 200px; text-align: center; font-weight: 700; font-size: 14px; text-transform: uppercase; color: #555; }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-200px * 6)); } }
 
+        /* GRID */
         .section-catalog { padding: 50px 20px; max-width: 1200px; margin: 0 auto; }
         .model-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 
@@ -43,6 +43,7 @@
         .car-card:hover { border-color: var(--geely-blue); transform: translateY(-5px); }
         .car-card img { width: 100%; height: auto; max-height: 180px; object-fit: contain; margin-bottom: 15px; }
 
+        /* PANEL DESPLEGABLE */
         .info-panel {
             display: none; grid-column: 1 / -1; background: var(--light-bg);
             border-radius: 20px; padding: 40px; margin-top: 20px; border: 1px solid #ddd;
@@ -50,14 +51,13 @@
         .info-panel.active { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; animation: fadeIn 0.4s; }
 
         .color-selector { display: flex; gap: 10px; margin: 20px 0; }
-        .dot { width: 30px; height: 30px; border-radius: 50%; cursor: pointer; border: 3px solid #fff; box-shadow: 0 0 5px rgba(0,0,0,0.1); transition: 0.2s; }
-        .dot:hover { transform: scale(1.1); }
+        .dot { width: 30px; height: 30px; border-radius: 50%; cursor: pointer; border: 3px solid #fff; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
 
-        .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
-        .spec-item { padding: 8px 0; border-bottom: 1px solid #dee2e6; font-size: 13px; text-align: left; }
+        .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+        .spec-item { padding: 6px 0; border-bottom: 1px solid #dee2e6; font-size: 13px; text-align: left; }
         .spec-item b { color: var(--geely-blue); }
 
-        .btn-wa { background: #25d366; color: white; text-decoration: none; padding: 12px 25px; border-radius: 6px; display: inline-block; margin-top: 25px; font-weight: 700; }
+        .btn-wa { background: #25d366; color: white; text-decoration: none; padding: 12px 25px; border-radius: 6px; display: inline-block; margin-top: 20px; font-weight: 700; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
         @media (max-width: 768px) { .info-panel.active { grid-template-columns: 1fr; padding: 20px; } }
@@ -71,7 +71,7 @@
             <img src="https://geely.com.do/wp-content/uploads/2025/03/logotipo.svg" style="height: 22px; filter: brightness(0) invert(1);">
             <span class="brand-name">BRENDA GIMENEZ</span>
         </div>
-        <a href="https://wa.me/595971723658" style="background:white; color:var(--geely-blue); text-decoration:none; padding: 8px 15px; border-radius:4px; font-weight:700; font-size:12px;">WHATSAPP</a>
+        <a href="https://wa.me/595971723658" style="background:white; color:var(--geely-blue); text-decoration:none; padding: 8px 15px; border-radius:4px; font-weight:700;">WHATSAPP</a>
     </div>
 </header>
 
@@ -84,47 +84,44 @@
 
 <section class="section-catalog">
     <div class="model-grid">
-        
-        <div class="car-card" onclick="toggleInfo('info-tucson')">
-            <img src="https://www.hyundai.com/content/dam/hyundai/ww/en/images/find-a-car/tucson-hybrid/nx4-he-fl-tucson-hybrid-side-view.png" alt="Tucson">
-            <h3>HYUNDAI TUCSON HEV</h3>
-            <p style="color: #666; font-size: 13px;">Ver colores y ficha técnica ↓</p>
+        <div class="car-card" onclick="toggleInfo('info-santafe')">
+            <img src="img/santa-fe-hybrid.webp" alt="Santa Fe Hybrid">
+            <h3>ALL NEW SANTA FE HYBRID</h3>
+            <p style="color: #666; font-size: 13px;">Dispuesto a más ↓</p>
         </div>
 
         <div class="car-card" onclick="toggleInfo('info-creta')">
-            <img src="https://www.hyundai.com/content/dam/hyundai/in/en/data/vehicle-thumbnail/Creta/800x430-10.png" alt="Creta">
+            <img src="img/creta-platinum.webp" alt="Creta Platinum">
             <h3>NEW CRETA PLATINUM</h3>
             <p style="color: #666; font-size: 13px;">Siente lo que nunca has sentido ↓</p>
         </div>
 
         <div class="car-card" onclick="toggleInfo('info-gx3')">
-            <img src="https://geely.com.do/wp-content/uploads/2025/03/vehiculo-thumb-GX3PRO.webp" alt="GX3 Pro">
+            <img src="img/gx3-pro.webp" alt="Geely GX3">
             <h3>GEELY GX3 PRO AT</h3>
-            <p style="color: #666; font-size: 13px;">Explorar colores ↓</p>
+            <p style="color: #666; font-size: 13px;">Explorar colores y ficha ↓</p>
         </div>
 
-        <div id="info-tucson" class="info-panel">
+        <div id="info-santafe" class="info-panel">
             <div class="panel-flex">
                 <div class="panel-text">
-                    <h2 style="color: var(--geely-blue); margin-top:0;">Tucson Hybrid HEV Limited</h2>
-                    <p><b>Elige tu color:</b></p>
+                    <h2 style="color: var(--geely-blue); margin-top:0;">All New Santa Fe Hybrid 2026</h2>
+                    <p><b>Configura tu color:</b></p>
                     <div class="color-selector">
-                        <div class="dot" style="background: #D2D4D6;" title="Plata" onclick="applyTucsonFilter('plata')"></div>
-                        <div class="dot" style="background: #F4F4F4;" title="Blanco Perla" onclick="applyTucsonFilter('blanco')"></div>
-                        <div class="dot" style="background: #54585A;" title="Gris Oscuro" onclick="applyTucsonFilter('gris')"></div>
-                        <div class="dot" style="background: #000000;" title="Negro" onclick="applyTucsonFilter('negro')"></div>
+                        <div class="dot" style="background: #D2D4D6;" title="Plata" onclick="changeImg('santafe-img', 'img/santafe-plata.webp')"></div>
+                        <div class="dot" style="background: #F4F4F4;" title="Blanco Perla" onclick="changeImg('santafe-img', 'img/santafe-blanco.webp')"></div>
+                        <div class="dot" style="background: #54585A;" title="Gris Oscuro" onclick="changeImg('santafe-img', 'img/santafe-gris.webp')"></div>
+                        <div class="dot" style="background: #000000;" title="Negro" onclick="changeImg('santafe-img', 'img/santafe-negro.webp')"></div>
                     </div>
                     <div class="specs-grid">
-                        <div class="spec-item">Motor: <b>1.6 Turbo HEV</b></div>
-                        <div class="spec-item">Potencia: <b>230 PS</b></div>
-                        <div class="spec-item">Torque: <b>37.4 kg.m</b></div>
-                        <div class="spec-item">Caja: <b>AT 6 Velocidades</b></div>
+                        <div class="spec-item">Motor: <b>Híbrido Autorecargo</b></div>
+                        <div class="spec-item">Diseño: <b>Luces en forma de H</b></div>
+                        <div class="spec-item">Interior: <b>Ambiente Tranquilo</b></div>
+                        <div class="spec-item">Conducción: <b>Ágil y Silenciosa</b></div>
                     </div>
-                    <a href="https://wa.me/595971723658?text=Hola Brenda, quiero info de la Tucson Hybrid" class="btn-wa">CONSULTAR PLANES</a>
+                    <a href="https://wa.me/595971723658?text=Info Santa Fe Hybrid" class="btn-wa">CONSULTAR ASESOR</a>
                 </div>
-                <div class="panel-img">
-                    <img id="tucson-img" src="https://www.hyundai.com/content/dam/hyundai/ww/en/images/find-a-car/tucson-hybrid/nx4-he-fl-tucson-hybrid-side-view.png" style="width:100%; transition: 0.3s; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));">
-                </div>
+                <div class="panel-img"><img id="santafe-img" src="img/santa-fe-hybrid.webp" style="width:100%;"></div>
             </div>
         </div>
 
@@ -132,19 +129,15 @@
             <div class="panel-flex">
                 <div class="panel-text">
                     <h2 style="color: var(--geely-blue); margin-top:0;">New Creta Platinum</h2>
-                    <p style="font-weight: 700; font-size: 20px; color: #333;">Precio Contado: $26.990</p>
+                    <p style="font-weight: 700; font-size: 22px; color: #333;">Desde $26.990</p>
                     <div class="specs-grid">
                         <div class="spec-item">Motor: <b>1.5 CC Naftero</b></div>
                         <div class="spec-item">Cámara: <b>360° Vision</b></div>
-                        <div class="spec-item">Seguridad: <b>6 Airbags + ADAS</b></div>
-                        <div class="spec-item">Monitor: <b>Punto Ciego (BVM)</b></div>
+                        <div class="spec-item">Seguridad: <b>6 Airbags + SmartSense</b></div>
                     </div>
-                    <p style="font-size: 11px; margin-top: 15px; color: #777;">Equipamiento destacado: Smart Key, Freno Autohold, Asistente de colisión frontal (FCA), Luces LED y Cargador Inalámbrico.</p>
-                    <a href="https://wa.me/595971723658?text=Hola Brenda, quiero info de la New Creta Platinum" class="btn-wa">MÁS INFORMACIÓN</a>
+                    <a href="https://wa.me/595971723658?text=Info New Creta Platinum" class="btn-wa">MÁS INFORMACIÓN</a>
                 </div>
-                <div class="panel-img">
-                    <img src="https://www.hyundai.com/content/dam/hyundai/in/en/data/vehicle-thumbnail/Creta/800x430-10.png" style="width:100%; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));">
-                </div>
+                <div class="panel-img"><img src="img/creta-platinum.webp" style="width:100%;"></div>
             </div>
         </div>
 
@@ -152,20 +145,15 @@
             <div class="panel-flex">
                 <div class="panel-text">
                     <h2 style="color: var(--geely-blue); margin-top:0;">Geely GX3 Pro AT</h2>
-                    <div class="color-selector">
-                        <div class="dot" style="background: #ffffff;" onclick="changeImg('gx3-img', 'https://geely.com.do/wp-content/uploads/2025/03/gx3-pro-color-04.webp')"></div>
-                        <div class="dot" style="background: #e63946;" onclick="changeImg('gx3-img', 'https://geely.com.do/wp-content/uploads/2025/03/gx3-pro-color-01.webp')"></div>
-                    </div>
                     <div class="specs-grid">
                         <div class="spec-item">Motor: <b>1.5L MPI</b></div>
                         <div class="spec-item">Caja: <b>CVT 8 Vel.</b></div>
                     </div>
                     <a href="https://wa.me/595971723658?text=Info Geely GX3" class="btn-wa">COTIZAR AHORA</a>
                 </div>
-                <div class="panel-img"><img id="gx3-img" src="https://geely.com.do/wp-content/uploads/2025/03/gx3-pro-color-04.webp" style="width:100%;"></div>
+                <div class="panel-img"><img src="img/gx3-pro.webp" style="width:100%;"></div>
             </div>
         </div>
-
     </div>
 </section>
 
@@ -181,25 +169,11 @@
         target.classList.add('active');
         setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
     }
-    
-    function changeImg(imgId, url) {
+    function changeImg(imgId, url) { 
         const img = document.getElementById(imgId);
-        img.style.opacity = '0';
-        setTimeout(() => { img.src = url; img.style.opacity = '1'; }, 200);
-    }
-
-    function applyTucsonFilter(color) {
-        const img = document.getElementById('tucson-img');
-        img.style.opacity = '0.5';
-        setTimeout(() => {
-            img.style.opacity = '1';
-            if(color === 'gris') img.style.filter = 'brightness(0.6) grayscale(0.4)';
-            else if(color === 'negro') img.style.filter = 'brightness(0.25) contrast(1.1)';
-            else if(color === 'plata') img.style.filter = 'brightness(0.9) saturate(0.5)';
-            else img.style.filter = 'none';
-        }, 200);
+        img.style.opacity = '0.3';
+        setTimeout(() => { img.src = url; img.style.opacity = '1'; }, 150);
     }
 </script>
-
 </body>
 </html>
