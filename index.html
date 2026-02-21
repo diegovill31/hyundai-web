@@ -104,15 +104,55 @@ img {
     .panel-text h2 { color: var(--brand-blue); margin-top: 0; font-size: 28px; }
     .spec-item { padding: 8px 0; border-bottom: 1px solid var(--border-color); font-size: 14px; color: var(--text-muted); }
     .spec-item b { color: var(--text-main); }
+/* BOTONES GENERALES */
+.btn-wa { 
+    background: #25d366; /* El verde de WA se mantiene porque es identidad */
+    color: white !important; 
+    text-decoration: none; 
+    padding: 15px 30px; 
+    border-radius: 8px; 
+    display: inline-block; 
+    margin-top: 30px; 
+    font-weight: 700; 
+    text-align: center;
+    border: none;
+}
 
-    /* BOTONES */
-    .btn-wa { 
-        background: #25d366; color: white; text-decoration: none; 
-        padding: 15px 30px; border-radius: 8px; display: inline-block; 
-        margin-top: 30px; font-weight: 700; text-align: center;
+/* BOTÓN ESPECÍFICO DEL HEADER (El que se veía blanco) */
+.btn-nav-wa {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.1); /* Blanco transparente para que no choque */
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-nav-wa:hover {
+    background-color: white;
+    color: var(--brand-blue) !important;
+}
+
+/* AJUSTE MODO OSCURO PARA EL BOTÓN DEL NAV */
+@media (prefers-color-scheme: dark) {
+    .btn-nav-wa {
+        background-color: var(--bg-card);
+        border-color: var(--border-color);
+        color: var(--brand-blue) !important;
     }
+}
 
-    .panel-img img { width: 100%; height: auto; transition: opacity 0.4s ease; filter: drop-shadow(0 15px 25px var(--shadow)); }
+.panel-img img { 
+    width: 100%; 
+    height: auto; 
+    transition: opacity 0.4s ease; 
+    filter: drop-shadow(0 15px 25px var(--shadow)); 
+}
+
+
 
     /* FOOTER */
     footer { 
@@ -329,6 +369,7 @@ img {
     </script>
 
 </body>
+
 
 
 
