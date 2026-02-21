@@ -128,27 +128,31 @@
                 <img src="https://automotor.com.py/wp-content/uploads/2021/05/logo-automotor.png" class="logo-automotor" alt="Automotor">
                 <span class="brand-name">CATÁLOGO DIGITAL</span>
             </div>
+            <a href="https://wa.me/595971723658" class="btn-wa" style="margin-top:0; padding: 8px 15px; font-size: 12px;">WHATSAPP</a>
         </div>
     </header>
 
     <div class="brand-carousel">
         <div class="brand-track">
             <div class="brand-logo">Hyundai</div>
-            <div class="brand-logo">Geely</div>
             <div class="brand-logo">Isuzu</div>
+            <div class="brand-logo">Geely</div>
+            <div class="brand-logo">KGM</div>
+            <div class="brand-logo">Maserati</div>
+            <div class="brand-logo">Lynk&Co</div>
             <div class="brand-logo">Hyundai</div>
-            <div class="brand-logo">Geely</div>
             <div class="brand-logo">Isuzu</div>
-            <div class="brand-logo">Hyundai</div>
             <div class="brand-logo">Geely</div>
-            <div class="brand-logo">Isuzu</div>
+            <div class="brand-logo">KGM</div>
+            <div class="brand-logo">Maserati</div>
+            <div class="brand-logo">Lynk&Co</div>
         </div>
     </div>
 
     <div style="display: flex; justify-content: center; gap: 10px; padding: 20px; background: #f8f9fa; flex-wrap: wrap; border-bottom: 1px solid #eee;">
-        <a href="#hyundai" style="text-decoration: none; background: var(--geely-blue); color: white; padding: 10px 25px; border-radius: 5px; font-weight: 700; font-size: 14px; transition: 0.3s;">Hyundai</a>
-        <a href="#geely" style="text-decoration: none; border: 1px solid var(--geely-blue); color: var(--geely-blue); padding: 10px 25px; border-radius: 5px; font-weight: 700; font-size: 14px; transition: 0.3s;">Geely</a>
-        <a href="#isuzu" style="text-decoration: none; border: 1px solid var(--geely-blue); color: var(--geely-blue); padding: 10px 25px; border-radius: 5px; font-weight: 700; font-size: 14px; transition: 0.3s;">Isuzu</a>
+        <a href="#hyundai" style="text-decoration: none; background: var(--geely-blue); color: white; padding: 10px 25px; border-radius: 5px; font-weight: 700; font-size: 14px;">Hyundai</a>
+        <a href="#geely" style="text-decoration: none; border: 1px solid var(--geely-blue); color: var(--geely-blue); padding: 10px 25px; border-radius: 5px; font-weight: 700; font-size: 14px;">Geely</a>
+        <a href="#isuzu" style="text-decoration: none; border: 1px solid var(--geely-blue); color: var(--geely-blue); padding: 10px 25px; border-radius: 5px; font-weight: 700; font-size: 14px;">Isuzu</a>
     </div>
 
     <section class="section-catalog">
@@ -156,16 +160,65 @@
         <div id="hyundai">
             <h3 style="text-align: center; color: #888; margin-bottom: 30px; letter-spacing: 2px; text-transform: uppercase; font-size: 14px;">Línea Hyundai</h3>
             
+            <div class="car-card">
+                <div class="panel-text">
+                    <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+                        <h1 style="font-size: 12px; color: #888; margin: 0;">HYUNDAI</h1>
+                        <span style="background: var(--geely-blue); color: white; font-size: 10px; padding: 2px 8px; border-radius: 4px; font-weight: 700;">HÍBRIDA</span>
+                    </div>
+                    <h2>New Tucson HEV 2026</h2>
+                    <p style="font-size: 14px; color: #555; margin-bottom: 15px;">Supera lo común. Selecciona tu color:</p>
+                    
+                    <div class="color-selector">
+                        <div class="dot active" style="background: #BDC3C7;" onclick="changeTucsonColor(this, 'Tucson Gris.png')"></div>
+                        <div class="dot" style="background: #D5D8DC;" onclick="changeTucsonColor(this, 'Tucson Plata.png')"></div>
+                        <div class="dot" style="background: #1C1C1C;" onclick="changeTucsonColor(this, 'Tucson Negra.png')"></div>
+                        <div class="dot" style="background: #FDFEFE; border: 1px solid #ddd;" onclick="changeTucsonColor(this, 'Tucson Blanca.png')"></div>
+                    </div>
+
+                    <div class="specs-grid">
+                        <div class="spec-item">Motor: <b>1.6 Turbo HEV</b></div>
+                        <div class="spec-item">Potencia: <b>230 ps</b></div>
+                        <div class="spec-item">Cilindrada: <b>1,598 cc</b></div>
+                        <div class="spec-item">Transmisión: <b>6 AT</b></div>
+                    </div>
+                    <a href="https://wa.me/595971723658?text=Info Tucson HEV" class="btn-wa">CONSULTAR AHORA</a>
+                </div>
+                <div class="panel-img">
+                    <img id="main-tucson" src="Tucson Gris.png" alt="Tucson HEV">
+                    <p style="font-size: 10px; color: #aaa; margin-top: 15px; text-align: center;">Representa y Distribuye: AUTOMOTOR S.A.</p>
+                </div>
             </div>
+
+            <div class="car-card" style="margin-top: 40px;">
+                <div class="panel-text">
+                    <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+                        <h1 style="font-size: 12px; color: #888; margin: 0;">HYUNDAI</h1>
+                        <span style="border: 1px solid var(--geely-blue); color: var(--geely-blue); font-size: 10px; padding: 2px 8px; border-radius: 4px; font-weight: 700;">PLATINUM</span>
+                    </div>
+                    <h2>New Creta Platinum</h2>
+                    <div class="specs-grid">
+                        <div class="spec-item">Motor: <b>1.5 MPi</b></div>
+                        <div class="spec-item">Potencia: <b>115 ps</b></div>
+                        <div class="spec-item">Cilindrada: <b>1,497 cc</b></div>
+                        <div class="spec-item">Transmisión: <b>IVT</b></div>
+                    </div>
+                    <p style="color: #666; font-size: 12px; margin-top: 20px; font-weight: 700;">VER VISTAS:</p>
+                    <div style="display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap;">
+                        <button onclick="rotateCreta('Nueva Creta Platinum.png')" style="cursor:pointer; padding:6px 10px; font-size:11px; flex-grow:1;">Exterior</button>
+                        <button onclick="rotateCreta('NEW CRETA INTERIOR.webp')" style="cursor:pointer; padding:6px 10px; font-size:11px; flex-grow:1;">Interior 1</button>
+                    </div>
+                    <a href="https://wa.me/595971723658?text=Info Creta Platinum" class="btn-wa">CONSULTAR AHORA</a>
+                </div>
+                <div class="panel-img">
+                    <img id="creta-slider" src="Nueva Creta Platinum.png" alt="Creta Platinum">
+                    <p style="font-size: 10px; color: #aaa; margin-top: 15px; text-align: center;">Representa y Distribuye: AUTOMOTOR S.A.</p>
+                </div>
+            </div>
+        </div>
 
         <div id="geely" style="margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee;">
             <h3 style="text-align: center; color: #888; margin-bottom: 30px; letter-spacing: 2px; text-transform: uppercase; font-size: 14px;">Línea Geely</h3>
-            
-            </div>
-
-        <div id="isuzu" style="margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee;">
-            <h3 style="text-align: center; color: #888; margin-bottom: 30px; letter-spacing: 2px; text-transform: uppercase; font-size: 14px;">Línea Isuzu</h3>
-            
             </div>
 
     </section>
@@ -173,151 +226,38 @@
     <footer>
         <span class="distribuidor">AUTOMOTOR S.A.</span>
         <p><b>Brenda Gimenez</b> | Asesora Comercial</p>
-        </footer>
-
-    </body>
-
-<header>
-    <div class="header-container">
-        <div style="display: flex; align-items: center; gap: 15px;">
-            <img src="https://raw.githubusercontent.com/diegovill31/hyundai-web/main/AUTOMOTOR%20LOGO.png" class="logo-automotor" alt="Automotor Logo">
-            <span class="brand-name">BRENDA GIMENEZ</span>
+        <div style="display: flex; gap: 15px; justify-content: center; margin-top: 25px; flex-wrap: wrap;">
+            <a href="https://wa.me/595971723658" target="_blank" style="background: var(--geely-blue); color: white; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(0, 107, 183, 0.2);">
+                <i class="fab fa-whatsapp" style="font-size: 20px;"></i> WHATSAPP
+            </a>
+            <a href="https://www.instagram.com/brendagimenez_automotor/" target="_blank" style="background: var(--geely-blue); color: white; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(0, 107, 183, 0.2);">
+                <i class="fab fa-instagram" style="font-size: 20px;"></i> INSTAGRAM
+            </a>
         </div>
-        <a href="https://wa.me/595971723658" style="background:white; color:var(--geely-blue); padding: 8px 15px; border-radius:4px; font-weight:700; text-decoration:none; font-size: 12px;">WHATSAPP</a>
-    </div>
-</header>
-   <div class="brand-carousel">
-    <div class="brand-track">
-        <div class="brand-logo">Hyundai</div>
-        <div class="brand-logo">Isuzu</div>
-        <div class="brand-logo">Geely</div>
-        <div class="brand-logo">KGM</div>
-        <div class="brand-logo">Maserati</div>
-        <div class="brand-logo">Lynk&Co</div>
-        <div class="brand-logo">Hyundai</div>
-        <div class="brand-logo">Isuzu</div>
-        <div class="brand-logo">Geely</div>
-        <div class="brand-logo">KGM</div>
-        <div class="brand-logo">Maserati</div>
-        <div class="brand-logo">Lynk&Co</div>
-    </div>
-</div> 
+    </footer>
 
-<section class="section-catalog">
-    <div class="car-card">
-<div class="panel-text">
-    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-        <h1 style="font-size: 14px; color: #888; margin: 0; text-transform: uppercase; letter-spacing: 1px;">Hyundai</h1>
-        <span style="background: #006BB7; color: white; font-size: 10px; padding: 3px 10px; border-radius: 4px; font-weight: 700; text-transform: uppercase; line-height: 1;">Híbrida</span>
-    </div>
-    
-    <h2 style="color: #006BB7; margin-top: 0; font-size: 32px; font-weight: 700;">New Tucson HEV 2026</h2>
-    <p style="color: #666; font-size: 14px; margin-top: -5px;">Supera lo común. Selecciona tu color:</p>
-    
-    </div>
-            <div class="color-selector">
-                <div class="dot" style="background: #D3D5DB;" onclick="changeTucsonColor(this, 'https://hyundai.pe/wp-content/uploads/2024/09/COLOR2-TUCSON.png')" title="Plata"></div>
-                <div class="dot active" style="background: #F9F9FA;" onclick="changeTucsonColor(this, 'https://hyundai.pe/wp-content/uploads/2024/09/BLANCO-COLORES-TUCSON.png')" title="Blanco Perla"></div>
-                <div class="dot" style="background: #292A2C;" onclick="changeTucsonColor(this, 'https://hyundai.pe/wp-content/uploads/2024/09/GRIS-OSCURO-COLORES-TUCSON.png')" title="Gris Oscuro"></div>
-                <div class="dot" style="background: #121214;" onclick="changeTucsonColor(this, 'https://hyundai.pe/wp-content/uploads/2024/09/NEGRO-COLORES-TUCSON.png')" title="Negro"></div>
-            </div>
-
-            <div class="specs-grid">
-                <div class="spec-item">Motor: <b>1.6 Turbo HEV + Motor Eléctrico (HEV)</b></div>
-                <div class="spec-item">Potencia: <b>230 ps</b></div>
-                <div class="spec-item">Cilindrada: <b>1,598 cc</b></div>
-                <div class="spec-item">Transmisión: <b>6 AT</b></div>
-            </div>
-
-            <a href="https://wa.me/595971723658?text=Hola Brenda, quiero info de la Tucson Hybrid" class="btn-wa">CONSULTAR AHORA</a>
-        </div>
-
-        <div class="panel-img">
-            <img id="main-tucson" src="https://hyundai.pe/wp-content/uploads/2024/09/BLANCO-COLORES-TUCSON.png" alt="Tucson HEV">
-            <p style="font-size: 10px; color: #aaa; margin-top: 20px; text-align: center;">Representa y Distribuye: AUTOMOTOR S.A.</p>
-        </div>
-    </div>
-<div class="car-card" style="margin-top: 30px;">
-    <div class="panel-text">
-        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
-            <h1 style="font-size: 14px; color: #888; margin: 0; text-transform: uppercase;">Hyundai</h1>
-            <span style="border: 1px solid #006BB7; color: #006BB7; font-size: 10px; padding: 1px 6px; border-radius: 4px; font-weight: 700;">PLATINUM</span>
-        </div>
-        
-        <h2 class="model-title" style="color: #006BB7; margin: 0 0 5px 0; font-weight: 700; line-height: 1.2;">New Creta Platinum</h2>
-        <p style="color: #666; font-size: 14px; margin-bottom: 15px;">Siente lo que nunca has sentido.</p>
-        
-        <div class="specs-grid">
-            <div class="spec-item">Motor: <b>1.6 Turbo HEV</b></div>
-            <div class="spec-item">Potencia: <b>230 ps</b></div>
-            <div class="spec-item">Cilindrada: <b>1,598 cc</b></div>
-            <div class="spec-item">Transmisión: <b>6 AT</b></div>
-        </div>
-
-        <p style="color: #666; font-size: 12px; margin-top: 20px; font-weight: 700;">VER VISTAS:</p>
-        <div style="display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap;">
-            <button onclick="rotateCreta('Nueva Creta Platinum.png')" class="btn-sm">Exterior</button>
-            <button onclick="rotateCreta('NEW CRETA INTERIOR.webp')" class="btn-sm">Interior 1</button>
-            <button onclick="rotateCreta('NUEVA CRETA INTERIOR 2.webp')" class="btn-sm">Interior 2</button>
-        </div>
-        
-        <a href="https://wa.me/595971723658?text=Info Creta Platinum" class="btn-wa" style="width: 100%; text-align: center; box-sizing: border-box;">CONSULTAR AHORA</a>
-    </div>
-
-    <div class="panel-img">
-        <img id="creta-slider" src="Nueva Creta Platinum.png" alt="Creta Platinum" style="width: 100%; height: auto;">
-        <p style="font-size: 10px; color: #aaa; margin-top: 15px; text-align: center;">Representa y Distribuye: AUTOMOTOR S.A.</p>
-    </div>
-</div>
-    
-</section>
-
-<footer>
-    <span class="distribuidor">AUTOMOTOR S.A.</span>
-    <p><b>Brenda Gimenez</b> | Asesora Comercial</p>
-<div style="display: flex; gap: 15px; justify-content: center; margin-top: 25px; flex-wrap: wrap;">
-    
-    <a href="https://wa.me/595971723658" target="_blank" style="background: #25D366; color: white; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 10px; transition: 0.3s; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);">
-        <span class="material-symbols-outlined" style="font-size: 20px;">chat</span> 
-        WHATSAPP
-    </a>
-    
-    <a href="https://www.instagram.com/brendagimenez_automotor/" target="_blank" style="background: var(--geely-blue); color: white; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 10px; transition: 0.3s; box-shadow: 0 4px 15px rgba(0, 107, 183, 0.2);">
-        <span class="material-symbols-outlined" style="font-size: 20px;">photo_camera</span> 
-        INSTAGRAM
-    </a>
-    
-</div>
-    
-<footer>
-
-<script>
-    function changeTucsonColor(element, url) {
-        const img = document.getElementById('main-tucson');
-        img.style.opacity = '0';
-        setTimeout(() => {
-            img.src = url;
-            img.style.opacity = '1';
-        }, 200);
-        document.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
-        element.classList.add('active');
-    }
-    function rotateCreta(url) {
-        const img = document.getElementById('creta-slider');
-        img.style.opacity = '0';
-        setTimeout(() => {
-            img.src = url;
-            img.style.opacity = '1';
-        }, 200);
-    }
-</script>
+    <script>
+        function changeTucsonColor(element, url) {
+            const img = document.getElementById('main-tucson');
+            img.style.opacity = '0';
+            setTimeout(() => {
+                img.src = url;
+                img.style.opacity = '1';
+            }, 200);
+            document.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
+            element.classList.add('active');
+        }
+        function rotateCreta(url) {
+            const img = document.getElementById('creta-slider');
+            img.style.opacity = '0';
+            setTimeout(() => {
+                img.src = url;
+                img.style.opacity = '1';
+            }, 200);
+        }
+    </script>
 
 </body>
-</html>
-
-
-
-
 
 
 
