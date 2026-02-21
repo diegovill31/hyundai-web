@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo Automotor | Brenda Gimenez</title>
+    <title>Catálogo Multimarca | Brenda Gimenez</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --geely-blue: #006BB7;
+            --hyundai-navy: #002c5f;
             --dark-blue: #06131F;
             --light-gray: #f8f9fa;
         }
 
         body { font-family: 'Inter', sans-serif; margin: 0; background: #fff; color: var(--dark-blue); scroll-behavior: smooth; }
 
-        /* Header Premium - Estilo Geely DO */
+        /* Header Estilo Geely DO */
         header {
             position: fixed; top: 0; width: 100%; height: 75px;
             background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);
@@ -22,20 +23,12 @@
         }
         .header-container {
             max-width: 1200px; width: 100%; margin: 0 auto; display: flex; 
-            justify-content: space-between; align-items: center; padding: 0 25px;
-            box-sizing: border-box;
+            justify-content: space-between; align-items: center; padding: 0 25px; box-sizing: border-box;
         }
 
-        /* Contenedor Principal */
         .section-catalog { padding: 120px 20px 60px; max-width: 1200px; margin: 0 auto; }
-        
-        .model-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+        .model-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
-        /* Tarjeta de Auto */
         .car-card {
             background: #fff; border: 1px solid #eee; border-radius: 15px; 
             padding: 20px; text-align: center; cursor: pointer; transition: 0.3s;
@@ -43,50 +36,44 @@
         .car-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.08); transform: translateY(-5px); }
         .car-card img { width: 100%; border-radius: 10px; margin-bottom: 15px; }
 
-        /* Ficha Técnica (Info abajo del auto) */
+        /* Paneles de Información */
         .info-panel {
-            display: none; 
-            grid-column: 1 / -1; 
-            background: var(--light-gray);
-            border-radius: 20px;
-            padding: 40px;
-            margin-top: 20px;
-            text-align: left;
-            border: 1px solid #ddd;
+            display: none; grid-column: 1 / -1; background: var(--light-gray);
+            border-radius: 20px; padding: 40px; margin-top: 20px; border: 1px solid #ddd;
         }
-        
-        /* Cuando el panel está activo se vuelve un grid de 2 columnas */
-        .info-panel.active { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 40px; 
-            animation: fadeIn 0.5s forwards;
-        }
+        .info-panel.active { display: block; animation: fadeIn 0.5s forwards; }
 
-        .specs-list { list-style: none; padding: 0; }
-        .specs-list li { 
-            padding: 12px 0; border-bottom: 1px solid #ddd; 
-            display: flex; justify-content: space-between; font-size: 15px;
+        .panel-flex { display: flex; gap: 40px; flex-wrap: wrap; }
+        .panel-text { flex: 1.2; min-width: 300px; }
+        .panel-img { flex: 1; min-width: 300px; text-align: center; }
+
+        /* Selector de Colores */
+        .color-selector { margin: 20px 0; display: flex; gap: 12px; align-items: center; }
+        .dot {
+            width: 28px; height: 28px; border-radius: 50%;
+            cursor: pointer; border: 3px solid #fff;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2); transition: 0.2s;
         }
-        .specs-list span { font-weight: 700; color: var(--geely-blue); }
+        .dot:hover { transform: scale(1.15); border-color: var(--geely-blue); }
+
+        /* Grilla de Especificaciones */
+        .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+        .spec-item { padding: 8px 0; border-bottom: 1px solid #ddd; font-size: 13px; display: flex; justify-content: space-between; padding-right: 10px; }
+        .spec-item b { color: var(--geely-blue); }
+
+        .tag-hev { background: #28a745; color: white; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; vertical-align: middle; }
 
         .btn-wa {
             background: #25d366; color: white; text-decoration: none;
             padding: 12px 25px; border-radius: 5px; display: inline-block; 
-            margin-top: 20px; font-weight: 700;
+            margin-top: 25px; font-weight: 700; transition: 0.3s;
         }
+        .btn-wa:hover { background: #1ebe57; transform: scale(1.05); }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
         footer { background: #f0f0f0; padding: 40px; text-align: center; margin-top: 60px; font-size: 14px; }
-
-        @media (max-width: 768px) {
-            .info-panel.active { grid-template-columns: 1fr; padding: 20px; }
-            .header-container span { display: none; } /* Oculta nombre en móviles muy chicos si molesta */
-        }
+        @media (max-width: 768px) { .specs-grid { grid-template-columns: 1fr; } .panel-flex { gap: 20px; } }
     </style>
 </head>
 <body>
@@ -102,49 +89,72 @@
 </header>
 
 <section class="section-catalog">
-    <h1 style="text-align:center; margin-bottom: 50px;">Catálogo de Modelos 2026</h1>
+    <h1 style="text-align:center; margin-bottom: 50px; font-size: 32px; letter-spacing: -1px;">Catálogo Paseo La Galería</h1>
     
     <div class="model-grid">
         <div class="car-card" onclick="toggleInfo('info-gx3')">
             <img src="https://geely.com.do/wp-content/uploads/2025/03/vehiculo-thumb-GX3PRO.webp" alt="Geely GX3">
             <h3>GEELY GX3 PRO AT</h3>
-            <p style="color: #666; font-size: 13px;">Click para ver detalles ↓</p>
+            <p style="color: #666; font-size: 13px;">Explorar colores y ficha ↓</p>
         </div>
 
-        <div class="car-card" onclick="toggleInfo('info-hb20s')">
-            <img src="https://geely.com.do/wp-content/uploads/2025/03/vehiculo-thumb-COOLRAY.webp" style="filter: grayscale(1);" alt="Hyundai HB20S">
-            <h3>HYUNDAI HB20S</h3>
-            <p style="color: #666; font-size: 13px;">Click para ver detalles ↓</p>
+        <div class="car-card" onclick="toggleInfo('info-tucson')">
+            <img src="https://geely.com.do/wp-content/uploads/2025/03/vehiculo-thumb-STARRAY.webp" alt="Tucson HEV">
+            <h3>NEW TUCSON <span class="tag-hev">HYBRID</span></h3>
+            <p style="color: #666; font-size: 13px;">Explorar colores y ficha ↓</p>
         </div>
 
         <div id="info-gx3" class="info-panel">
-            <div>
-                <h2 style="color: var(--geely-blue);">Geely GX3 PRO</h2>
-                <p>La SUV más elegida en Paseo La Galería por su confort y tecnología.</p>
-                <ul class="specs-list">
-                    <li>Motor: <span>1.5L MPI</span></li>
-                    <li>Caja: <span>Automática 8 Vel.</span></li>
-                    <li>Techo Solar: <span>Incluido</span></li>
-                    <li>Pantalla: <span>8" con Cámara</span></li>
-                </ul>
-                <a href="https://wa.me/595971723658?text=Hola Brenda, quiero más info de la GX3 Pro" class="btn-wa">Lo quiero ahora</a>
+            <div class="panel-flex">
+                <div class="panel-text">
+                    <h2 style="color: var(--geely-blue); margin-top:0;">Geely GX3 PRO</h2>
+                    <p><b>Elegí tu color:</b></p>
+                    <div class="color-selector">
+                        <div class="dot" style="background: #ffffff;" title="Blanco" onclick="changeImg('img-gx3', 'https://geely.com.do/wp-content/uploads/2025/03/gx3-pro-color-04.webp')"></div>
+                        <div class="dot" style="background: #e63946;" title="Rojo" onclick="changeImg('img-gx3', 'https://geely.com.do/wp-content/uploads/2025/03/gx3-pro-color-01.webp')"></div>
+                        <div class="dot" style="background: #2b5d95;" title="Azul" onclick="changeImg('img-gx3', 'https://geely.com.do/wp-content/uploads/2025/03/gx3-pro-color-02.webp')"></div>
+                        <div class="dot" style="background: #4a4a4a;" title="Gris" onclick="changeImg('img-gx3', 'https://geely.com.do/wp-content/uploads/2025/03/gx3-pro-color-03.webp')"></div>
+                    </div>
+                    <div class="specs-grid">
+                        <div class="spec-item">Motor: <b>1.5L MPI</b></div>
+                        <div class="spec-item">Potencia: <b>102 HP</b></div>
+                        <div class="spec-item">Caja: <b>Automática 8 Vel.</b></div>
+                        <div class="spec-item">Tracción: <b>Delantera</b></div>
+                    </div>
+                    <a href="https://wa.me/595971723658?text=Hola Brenda, quiero info de la Geely GX3 Pro" class="btn-wa">Consultar Financiación</a>
+                </div>
+                <div class="panel-img">
+                    <img id="img-gx3" src="https://geely.com.do/wp-content/uploads/2025/03/gx3-pro-color-04.webp" style="width:100%; transition: 0.3s;">
+                </div>
             </div>
-            <img src="https://geely.com.do/wp-content/uploads/2025/03/gx3-pro-color-04.webp" style="width:100%; height: auto; object-fit: contain;">
         </div>
 
-        <div id="info-hb20s" class="info-panel">
-            <div>
-                <h2 style="color: var(--geely-blue);">Hyundai HB20S</h2>
-                <p>Representante oficial: Automotor S.A.</p>
-                <ul class="specs-list">
-                    <li>Motor: <span>1.6 Gamma MPI</span></li>
-                    <li>Potencia: <span>123 CV</span></li>
-                    <li>Maletero: <span>475 Litros</span></li>
-                    <li>Airbags: <span>6 de serie</span></li>
-                </ul>
-                <a href="https://wa.me/595971723658?text=Hola Brenda, quiero info del HB20S" class="btn-wa">Consultar Financiación</a>
+        <div id="info-tucson" class="info-panel">
+            <div class="panel-flex">
+                <div class="panel-text">
+                    <h2 style="color: var(--hyundai-navy); margin-top:0;">New Tucson HEV Limited</h2>
+                    <p><b>Elegí tu color:</b></p>
+                    <div class="color-selector">
+                        <div class="dot" style="background: #d1d1d1;" title="Amazon Grey" onclick="changeImg('img-tucson', 'https://geely.com.do/wp-content/uploads/2025/03/gx3-pro-hero.webp')"></div>
+                        <div class="dot" style="background: #fdfdfd;" title="White Cream" onclick="changeImg('img-tucson', 'https://geely.com.do/wp-content/uploads/2025/03/gx3-pro-hero.webp')"></div>
+                        <div class="dot" style="background: #111;" title="Phantom Black" onclick="changeImg('img-tucson', 'https://geely.com.do/wp-content/uploads/2025/03/gx3-pro-hero.webp')"></div>
+                    </div>
+                    <div class="specs-grid">
+                        <div class="spec-item">Motor: <b>1.6 Turbo HEV</b></div>
+                        <div class="spec-item">Potencia: <b>230 PS</b></div>
+                        <div class="spec-item">Transmisión: <b>AT 6 Velocidades</b></div>
+                        <div class="spec-item">Tracción: <b>Delantera</b></div>
+                        <div class="spec-item">Llantas: <b>R19 Diamantadas</b></div>
+                        <div class="spec-item">Maletero: <b>539 L</b></div>
+                    </div>
+                    <p style="margin-top:20px; font-size:12px; color:#666;">▪ 6 Airbags ▪ Cámara 360° ▪ SmartSense ▪ Techo Panorámico ▪ Maletero Eléctrico</p>
+                    <a href="https://wa.me/595971723658?text=Hola Brenda, quiero info de la Tucson Hybrid" class="btn-wa">Hablar con Asesora</a>
+                </div>
+                <div class="panel-img">
+                    <img id="img-tucson" src="https://geely.com.do/wp-content/uploads/2025/03/gx3-pro-hero.webp" style="width:100%; border-radius:15px; filter: hue-rotate(160deg) brightness(0.7);">
+                    <p style="font-size:11px; color:#999; margin-top:10px;">*Garantía de batería: 8 años o 160,000 km</p>
+                </div>
             </div>
-            <img src="https://geely.com.do/wp-content/uploads/2025/03/vehiculo-thumb-STARRAY.webp" style="width:100%; height: auto; object-fit: contain;">
         </div>
 
     </div>
@@ -152,30 +162,33 @@
 
 <footer>
     <p><strong>Brenda Gimenez</strong> - Asesora Especialista Automotor S.A.</p>
-    <p>📍 Sucursal Paseo La Galería, Nivel 1. Fernando de la Mora, Paraguay.</p>
+    <p>  Sucursal Paseo La Galería, Nivel 1. Asuncion.</p>
     <p>WhatsApp: +595 971 723 658</p>
 </footer>
 
 <script>
     function toggleInfo(id) {
-        // Seleccionamos todos los paneles
         const panels = document.querySelectorAll('.info-panel');
-        const targetPanel = document.getElementById(id);
-        
-        // Guardamos si el panel ya estaba abierto
-        const isOpen = targetPanel.classList.contains('active');
+        const target = document.getElementById(id);
+        const isOpen = target.classList.contains('active');
 
-        // Cerramos todos
         panels.forEach(p => p.classList.remove('active'));
 
-        // Si no estaba abierto, lo abrimos
         if (!isOpen) {
-            targetPanel.classList.add('active');
-            // Scroll suave hacia la info
+            target.classList.add('active');
             setTimeout(() => {
-                targetPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }, 100);
         }
+    }
+
+    function changeImg(imgId, url) {
+        const img = document.getElementById(imgId);
+        img.style.opacity = '0.3';
+        setTimeout(() => {
+            img.src = url;
+            img.style.opacity = '1';
+        }, 200);
     }
 </script>
 
