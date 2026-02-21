@@ -52,6 +52,33 @@
         .distribuidor { color: var(--geely-blue); font-weight: 700; font-size: 16px; display: block; margin-bottom: 15px; }
 
         @media (max-width: 768px) { .car-card { grid-template-columns: 1fr; padding: 25px; } .header-container { padding: 0 15px; } }
+    .brand-carousel { 
+            background: #fff; 
+            padding: 15px 0; 
+            margin-top: 80px; /* Ajustado al alto de tu header (80px) */
+            overflow: hidden; 
+            border-bottom: 1px solid #eee; 
+        }
+
+        .brand-track { 
+            display: flex; 
+            width: calc(200px * 12); 
+            animation: scroll 25s linear infinite; 
+        }
+
+        .brand-logo { 
+            width: 200px; 
+            text-align: center; 
+            font-weight: 700; 
+            font-size: 14px; 
+            text-transform: uppercase; 
+            color: #555; 
+        }
+
+        @keyframes scroll { 
+            0% { transform: translateX(0); } 
+            100% { transform: translateX(calc(-200px * 6)); } 
+        }
     </style>
 </head>
 <body>
@@ -65,6 +92,22 @@
         <a href="https://wa.me/595971723658" style="background:white; color:var(--geely-blue); padding: 8px 15px; border-radius:4px; font-weight:700; text-decoration:none; font-size: 12px;">WHATSAPP</a>
     </div>
 </header>
+   <div class="brand-carousel">
+    <div class="brand-track">
+        <div class="brand-logo">Hyundai</div>
+        <div class="brand-logo">Isuzu</div>
+        <div class="brand-logo">Geely</div>
+        <div class="brand-logo">KGM</div>
+        <div class="brand-logo">Maserati</div>
+        <div class="brand-logo">Lynk&Co</div>
+        <div class="brand-logo">Hyundai</div>
+        <div class="brand-logo">Isuzu</div>
+        <div class="brand-logo">Geely</div>
+        <div class="brand-logo">KGM</div>
+        <div class="brand-logo">Maserati</div>
+        <div class="brand-logo">Lynk&Co</div>
+    </div>
+</div> 
 
 <section class="section-catalog">
     <div class="car-card">
@@ -118,3 +161,4 @@
 
 </body>
 </html>
+
