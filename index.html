@@ -48,19 +48,23 @@
             display: none; grid-column: 1 / -1; background: var(--light-bg);
             border-radius: 20px; padding: 40px; margin-top: 20px; border: 1px solid #ddd;
         }
-        .info-panel.active { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; animation: fadeIn 0.4s; }
+        .info-panel.active { display: block; animation: fadeIn 0.4s; }
+
+        .specs-section { margin-bottom: 30px; }
+        .specs-title { font-weight: 700; color: var(--geely-blue); border-bottom: 2px solid #ddd; padding-bottom: 5px; margin-bottom: 15px; text-transform: uppercase; font-size: 14px; }
+        .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
+        .spec-item { padding: 6px 0; border-bottom: 1px solid #dee2e6; font-size: 13px; text-align: left; display: flex; justify-content: space-between; }
+        .spec-item b { color: #333; }
 
         .color-selector { display: flex; gap: 10px; margin: 20px 0; }
         .dot { width: 30px; height: 30px; border-radius: 50%; cursor: pointer; border: 3px solid #fff; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
 
-        .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
-        .spec-item { padding: 6px 0; border-bottom: 1px solid #dee2e6; font-size: 13px; text-align: left; }
-        .spec-item b { color: var(--geely-blue); }
-
         .btn-wa { background: #25d366; color: white; text-decoration: none; padding: 12px 25px; border-radius: 6px; display: inline-block; margin-top: 20px; font-weight: 700; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 768px) { .info-panel.active { grid-template-columns: 1fr; padding: 20px; } }
+        
+        footer { background: #f0f0f0; padding: 40px; text-align: center; font-size: 13px; line-height: 1.6; }
+        .footer-distribuidor { font-weight: 700; color: var(--geely-blue); margin-bottom: 10px; display: block; }
     </style>
 </head>
 <body>
@@ -71,7 +75,7 @@
             <img src="https://geely.com.do/wp-content/uploads/2025/03/logotipo.svg" style="height: 22px; filter: brightness(0) invert(1);">
             <span class="brand-name">BRENDA GIMENEZ</span>
         </div>
-        <a href="https://wa.me/595971723658" style="background:white; color:var(--geely-blue); text-decoration:none; padding: 8px 15px; border-radius:4px; font-weight:700;">WHATSAPP</a>
+        <a href="https://wa.me/595971723658" style="background:white; color:var(--geely-blue); text-decoration:none; padding: 8px 15px; border-radius:4px; font-weight:700; font-size:12px;">WHATSAPP</a>
     </div>
 </header>
 
@@ -84,82 +88,78 @@
 
 <section class="section-catalog">
     <div class="model-grid">
-        <div class="car-card" onclick="toggleInfo('info-santafe')">
-            <img src="img/santa-fe-hybrid.webp" alt="Santa Fe Hybrid">
-            <h3>ALL NEW SANTA FE HYBRID</h3>
-            <p style="color: #666; font-size: 13px;">Dispuesto a más ↓</p>
+        <div class="car-card" onclick="toggleInfo('info-tucson')">
+            <img src="img/tucson-hybrid.webp" alt="Tucson HEV">
+            <h3>NEW TUCSON HEV 2026</h3>
+            <p style="color: #666; font-size: 13px;">Explorar colores y especificaciones ↓</p>
         </div>
 
         <div class="car-card" onclick="toggleInfo('info-creta')">
-            <img src="img/creta-platinum.webp" alt="Creta Platinum">
+            <img src="img/creta-platinum.webp" alt="Creta">
             <h3>NEW CRETA PLATINUM</h3>
-            <p style="color: #666; font-size: 13px;">Siente lo que nunca has sentido ↓</p>
+            <p style="color: #666; font-size: 13px;">Ver equipamiento completo ↓</p>
         </div>
 
-        <div class="car-card" onclick="toggleInfo('info-gx3')">
-            <img src="img/gx3-pro.webp" alt="Geely GX3">
-            <h3>GEELY GX3 PRO AT</h3>
-            <p style="color: #666; font-size: 13px;">Explorar colores y ficha ↓</p>
-        </div>
-
-        <div id="info-santafe" class="info-panel">
-            <div class="panel-flex">
-                <div class="panel-text">
-                    <h2 style="color: var(--geely-blue); margin-top:0;">All New Santa Fe Hybrid 2026</h2>
-                    <p><b>Configura tu color:</b></p>
+        <div id="info-tucson" class="info-panel">
+            <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+                <div style="flex: 1.5; min-width: 300px;">
+                    <h2 style="color: var(--geely-blue); margin-top:0;">New Tucson HEV</h2>
+                    <p style="font-size: 14px; color: #666;">Selecciona el color de tu preferencia:</p>
                     <div class="color-selector">
-                        <div class="dot" style="background: #D2D4D6;" title="Plata" onclick="changeImg('santafe-img', 'img/santafe-plata.webp')"></div>
-                        <div class="dot" style="background: #F4F4F4;" title="Blanco Perla" onclick="changeImg('santafe-img', 'img/santafe-blanco.webp')"></div>
-                        <div class="dot" style="background: #54585A;" title="Gris Oscuro" onclick="changeImg('santafe-img', 'img/santafe-gris.webp')"></div>
-                        <div class="dot" style="background: #000000;" title="Negro" onclick="changeImg('santafe-img', 'img/santafe-negro.webp')"></div>
+                        <div class="dot" style="background: #E5E5E5;" title="Plata" onclick="changeImg('tucson-img', 'img/tucson-plata.webp')"></div>
+                        <div class="dot" style="background: #FFFFFF;" title="Blanco Perla" onclick="changeImg('tucson-img', 'img/tucson-blanco.webp')"></div>
+                        <div class="dot" style="background: #4A4A4A;" title="Gris Oscuro" onclick="changeImg('tucson-img', 'img/tucson-gris.webp')"></div>
+                        <div class="dot" style="background: #000000;" title="Negro" onclick="changeImg('tucson-img', 'img/tucson-negro.webp')"></div>
                     </div>
-                    <div class="specs-grid">
-                        <div class="spec-item">Motor: <b>Híbrido Autorecargo</b></div>
-                        <div class="spec-item">Diseño: <b>Luces en forma de H</b></div>
-                        <div class="spec-item">Interior: <b>Ambiente Tranquilo</b></div>
-                        <div class="spec-item">Conducción: <b>Ágil y Silenciosa</b></div>
-                    </div>
-                    <a href="https://wa.me/595971723658?text=Info Santa Fe Hybrid" class="btn-wa">CONSULTAR ASESOR</a>
-                </div>
-                <div class="panel-img"><img id="santafe-img" src="img/santa-fe-hybrid.webp" style="width:100%;"></div>
-            </div>
-        </div>
 
-        <div id="info-creta" class="info-panel">
-            <div class="panel-flex">
-                <div class="panel-text">
-                    <h2 style="color: var(--geely-blue); margin-top:0;">New Creta Platinum</h2>
-                    <p style="font-weight: 700; font-size: 22px; color: #333;">Desde $26.990</p>
-                    <div class="specs-grid">
-                        <div class="spec-item">Motor: <b>1.5 CC Naftero</b></div>
-                        <div class="spec-item">Cámara: <b>360° Vision</b></div>
-                        <div class="spec-item">Seguridad: <b>6 Airbags + SmartSense</b></div>
+                    <div class="specs-section">
+                        <div class="specs-title">Motor / Transmisión</div>
+                        <div class="specs-grid">
+                            <div class="spec-item">Motor: <b>Smartstream 1.6 Turbo HEV</b></div>
+                            <div class="spec-item">Combustible: <b>Híbrida</b></div>
+                            <div class="spec-item">Cilindrada: <b>1,598 cc</b></div>
+                            <div class="spec-item">Potencia: <b>230 ps</b></div>
+                            <div class="spec-item">Torque: <b>37.4 kg.m</b></div>
+                            <div class="spec-item">Transmisión: <b>Automática 6 Vel.</b></div>
+                            <div class="spec-item">Sistema de Aspiración: <b>Turbo e-VGT</b></div>
+                        </div>
                     </div>
-                    <a href="https://wa.me/595971723658?text=Info New Creta Platinum" class="btn-wa">MÁS INFORMACIÓN</a>
-                </div>
-                <div class="panel-img"><img src="img/creta-platinum.webp" style="width:100%;"></div>
-            </div>
-        </div>
 
-        <div id="info-gx3" class="info-panel">
-            <div class="panel-flex">
-                <div class="panel-text">
-                    <h2 style="color: var(--geely-blue); margin-top:0;">Geely GX3 Pro AT</h2>
-                    <div class="specs-grid">
-                        <div class="spec-item">Motor: <b>1.5L MPI</b></div>
-                        <div class="spec-item">Caja: <b>CVT 8 Vel.</b></div>
+                    <div class="specs-section">
+                        <div class="specs-title">Dimensiones</div>
+                        <div class="specs-grid">
+                            <div class="spec-item">Largo: <b>4630 mm</b></div>
+                            <div class="spec-item">Peso bruto: <b>1.526 kg</b></div>
+                            <div class="spec-item">Maletero: <b>539 L</b></div>
+                            <div class="spec-item">Tanque: <b>52 L</b></div>
+                        </div>
                     </div>
-                    <a href="https://wa.me/595971723658?text=Info Geely GX3" class="btn-wa">COTIZAR AHORA</a>
+
+                    <div class="specs-section">
+                        <div class="specs-title">Seguridad (Limited)</div>
+                        <div style="font-size: 12px; color: #555; column-count: 2;">
+                            ▪ 6 Airbags ▪ ABS+ESC+DBC+HAC+TSA ▪ Cámara 360° ▪ LKA/LFA Asistente carril ▪ FCA Colisión Frontal ▪ BCA Punto Ciego ▪ TPMS Monitoreo presión ▪ SCC Control crucero adaptativo.
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/595971723658?text=Info New Tucson HEV" class="btn-wa">CONSULTAR ASESORA</a>
                 </div>
-                <div class="panel-img"><img src="img/gx3-pro.webp" style="width:100%;"></div>
+                <div style="flex: 1; text-align: center;">
+                    <img id="tucson-img" src="img/tucson-hybrid.webp" style="width:100%; border-radius: 15px;">
+                    <p style="font-size: 10px; color: #999; margin-top: 15px;">*Las imágenes son referenciales y las opciones pueden variar.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <footer>
-    <p><strong>Brenda Gimenez</strong> | Automotor S.A. Paraguay</p>
-    <p>📍 Paseo La Galería - Nivel 1</p>
+    <span class="footer-distribuidor">REPRESENTA Y DISTRIBUYE: AUTOMOTOR S.A.</span>
+    <p><b>Brenda Gimenez</b> | Asesora Especialista</p>
+    <p>Avenida General José Gervasio Artigas 1921</p>
+    <p>centro.de.contacto@automotor.com.py | Tel.: (+595 21) 729 7878</p>
+    <p><a href="http://www.hyundai.com.py" style="color: var(--geely-blue); text-decoration: none;">www.hyundai.com.py</a></p>
+    <p>Seguinos: <b>hyundaipy | hyundaiparaguay</b></p>
 </footer>
 
 <script>
